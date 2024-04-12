@@ -1,7 +1,14 @@
-function hasTargetSum(array, target) {
+
+  function isPalindrome(word) {
   // Write your algorithm here
+  const reversedWord = reverseString(word);
+  return word === reversedWord;
 }
 
+
+function reverseString(word) {
+  return word.split("").reverse().join("");
+}
 /* 
   Write the Big O time complexity of your function here
 */
@@ -18,17 +25,12 @@ function hasTargetSum(array, target) {
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
-  console.log("=>", hasTargetSum([3, 8, 12, 4, 11, 7], 10));
-
-  console.log("");
-
-  console.log("Expecting: true");
-  console.log("=>", hasTargetSum([22, 19, 4, 6, 30], 25));
+  console.log("=>", isPalindrome("racecar"));
 
   console.log("");
 
   console.log("Expecting: false");
-  console.log("=>", hasTargetSum([1, 2, 5], 4));
+  console.log("=>", isPalindrome("robot"));
 }
 
 module.exports = hasTargetSum;
